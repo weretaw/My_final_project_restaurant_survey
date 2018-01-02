@@ -1,0 +1,30 @@
+<body class="newbody">
+<div class="navbar1" >
+  <nav class="navbar navbar-inverse navbar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <!-- <a class="navbar-brand"  [routerLink]="['/home']" href=""><img class="imglink"  src="../../assets/Serever-pic/p-trans.jpg"/></a>  -->
+        <a class="navbar-brand"  [routerLink]="['/home']" href=""><img class="imglink" src="https://bytebucket.org/consatanos/pen-picture/raw/3c0be7f1f1ea380d9165eb09d5c0f1ec921448f2/f-r/img/logo.png" alt="logo"></a>
+        
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a [routerLink]="['/home']">Home</a></li>
+        <li><a [routerLink]="['/Top10']">Top10</a></li>
+        <li><a *ngIf="auth.isAuthenticated()" [routerLink]="['/AddReview']">Add Review</a></li>
+        <li><a [routerLink]="['/About']">About</a></li>
+        <li><a [routerLink]="['/ContactUs']">Contact Us</a></li>
+        <li><a *ngIf="auth.getAdmin()&&auth.isAuthenticated()" [routerLink]="['/EditResurant']"><span class="glyphicon glyphicon-king spanIcon title" title="Admin"></span> Edit Resurant</a></li>
+        <li><a *ngIf="auth.getAdmin()&&auth.isAuthenticated()" [routerLink]="['/AdminMassages']"><span class="glyphicon glyphicon-king spanIcon" title="Admin"></span> Admin Massages</a></li>
+        <li><a *ngIf="auth.getAdmin()&&auth.isAuthenticated()" [routerLink]="['/AdminOrUser']"><span class="glyphicon glyphicon-king spanIcon" title="Admin"></span> Admin Or User</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a *ngIf="!auth.isAuthenticated()" (click)="auth.login()"><span class="glyphicon glyphicon-user"></span>Register/login</a></li>
+        <li><a *ngIf="auth.isAuthenticated()" (click)="auth.logout()"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+        <li><a *ngIf="auth.isAuthenticated()" [routerLink]="['/Profile']">My Profile</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<router-outlet></router-outlet>
+</body>

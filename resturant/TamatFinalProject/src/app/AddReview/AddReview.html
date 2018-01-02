@@ -1,0 +1,51 @@
+<section id="contact">
+  <div class="contact-section">
+    <div *ngIf="formhiden" class="container formTop">
+      <h1>Add Review</h1>
+      <form #trvForm="ngForm" (ngSubmit)="submitHandler(trvForm)">
+        <div class="col-md-6 form-line divTop">
+          <div class="form-group">
+            <label for="idRestaurant">Restaurant Name</label>
+            <select (click)="getResturanrCtegoryAndArea()" id="idRestaurant" [(ngModel)]="RestaurantName" name="restaurantname" class="form-control"
+              required>
+  <option *ngFor="let a of arRestaurant" [value]="a.Name" >{{a.Name}}</option>
+</select>
+          </div>
+
+          <div class="form-group">
+            <label for="idcategory">Category</label>
+            <select id="idcategory" [(ngModel)]="Category" name="category" class="form-control" required>
+  <option *ngFor="let a of arrResturantCtegory" [value]="a.Category" >{{a.Category}}</option>
+</select>
+          </div>
+
+          <div class="form-group">
+            <label for="idarea">Area</label>
+            <select id="idarea" [(ngModel)]="Area" name="area" class="form-control" required>
+  <option *ngFor="let a of arrResturantCtegory"  [value]="a.Area">{{a.Area}}</option>
+</select>
+          </div>
+
+          <div class="form-group">
+            <label for="idreview">Reviews</label>
+            <textarea id="idreview" [(ngModel)]="Review" name="review" type="text" class="form-control" required></textarea>
+          </div>
+
+          <div [hidden]="!booli" class="form-group">
+            <label for="idrate">Rate</label>
+            <input id="idrate" [(ngModel)]="Rate" name="rate" type="number" value="{{Rate}}" step="1" min="1" max="5" maxlength="1" class="form-control"
+              required>
+          </div>
+          <div class="container">
+            <rating [(ngModel)]="Rate" name="rate"></rating>
+          </div>
+
+          <button type="submit" (click)="saveTodos()" title="Fill all fields please!" [disabled]="!trvForm.valid" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div *ngIf="send" class="alert alert-success box-msg massegbox" role="alert">
+    <strong>Your Review</strong> is send to the restaurant Thank you.
+  </div>
+</section>

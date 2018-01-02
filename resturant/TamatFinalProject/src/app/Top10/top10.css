@@ -1,0 +1,22 @@
+h1{
+    text-align: center ;
+    font-stretch: extra-expanded;
+    font-family: Stencil Std, fantasy;
+}
+
+table{
+    background-color: rgba(14, 12, 12, 0.6);
+    color: #E7E2DE;
+}
+.spanBg{
+background-color: black;
+color: gold;
+font-size: 20px;
+}
+tr:hover{
+    color: black;
+}
+
+th{
+    color: gold;
+}

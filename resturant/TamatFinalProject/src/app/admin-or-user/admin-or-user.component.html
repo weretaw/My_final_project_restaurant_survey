@@ -1,0 +1,32 @@
+<table *ngIf="AddResurantFormHide==null" class="table table-hover navbar1">
+    <tr>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Remove</th>
+        <th>Edit</th>
+    </tr>
+    <tr  *ngFor="let item of arrAllResturants">
+        <td>{{item.Email}}</td>
+        <td>{{item.Role}}</td>
+        <td><span class="glyphicon glyphicon-remove DeleteIcon" title="Delete {{item.Email}}" (click)="DeleteUser(item.ID)"></span></td>
+        <td><span class="glyphicon glyphicon-edit EditIcon" title="Edit {{item.Email}}" (click)="editUser(item)"></span></td>
+    </tr>
+</table>
+
+
+<!--Edit-->
+<div class="container" *ngIf="change" >
+  <form #trvFormEdit="ngForm" (ngSubmit)="onSubmit(trvFormEdit)">
+    <div class="form-group">
+      <label for="IdEmail">Email</label>
+      <input id="IdEmail" type="text" class="form-control" required [(ngModel)]="resurantToEdit.Email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="IdRole">Role</label>
+      <input id="IdRole" type="text" class="form-control" required [(ngModel)]="resurantToEdit.Role" name="role">
+    </div>
+   
+      <button class="btn btn-primary">Save</button>  
+      </form>
+</div>
+

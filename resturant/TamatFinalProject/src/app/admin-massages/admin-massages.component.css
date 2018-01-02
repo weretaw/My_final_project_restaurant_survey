@@ -1,0 +1,12 @@
+table{
+    background-color: rgba(0, 0, 0, 0.6);
+    color: chocolate;
+}
+.mailto{
+    display:block;
+    width:100px;
+    height:20px;
+  }
+  .sendI:hover{
+      color: yellowgreen;
+  }

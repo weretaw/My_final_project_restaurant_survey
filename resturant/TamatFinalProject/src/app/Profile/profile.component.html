@@ -1,0 +1,76 @@
+<!-- <div  class="container">
+  <div class="row">
+    <div class="col-lg-3 col-sm-15">
+      <div class="card hovercard">
+        <div class="cardheader">
+        </div>
+        <div class="avatar">
+          <img src="{{profile.picture}}" alt="">
+        </div>
+        <div class="info">
+          <div class="title">
+            <a target="_blank">{{ profile?.nickname }}</a>
+          </div>
+          <div class="desc">{{profile.name}}</div>
+          <div class="desc">{{profile.nickname}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+ <div class="container bootstrap snippet">
+  <div class="panel-body inf-content">
+    <div class="row">
+      <div class="col-md-4">
+        <img alt="" style="width:200px;" title="" class="img-circle img-thumbnail isTooltip" src="{{profile.picture}}" data-original-title="Usuario">
+
+      </div>
+      <div class="col-md-6">
+        <strong>Information</strong><br>
+        <div class="table-responsive">
+          <table class="table table-condensed table-responsive table-user-information">
+            <tbody>
+              <tr>
+                <td>
+                  <strong>
+                                <span class="glyphicon glyphicon-user  text-primary"></span>    
+                                Name                                                
+                            </strong>
+                </td>
+                <td class="text-primary">
+                  {{profile.name}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>
+                                <span class="glyphicon glyphicon-bookmark text-primary"></span> 
+                                Username                                                
+                            </strong>
+                </td>
+                <td class="text-primary">
+                  {{profile.nickname}}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <strong>
+                                <span class="glyphicon glyphicon-envelope text-primary"></span> 
+                                Email                                                
+                            </strong>
+                </td>
+                <td class="text-primary">
+                  {{profile.email}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+ 
+

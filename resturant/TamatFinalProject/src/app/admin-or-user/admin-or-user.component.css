@@ -1,0 +1,21 @@
+.navbar1{
+    background-color: rgba(12, 13, 14, 0.7);
+
+  }
+
+  .DeleteIcon:hover{
+    color: red
+    }
+    .EditIcon:hover{
+    color: blue;
+    }
+
+    .buttonheadr{
+      background-color: black;
+      color: floralwhite;
+      border-radius: 8px;
+      border: none;
+      }
+      .buttonh:hover{
+      background-color: #743409;
+      }

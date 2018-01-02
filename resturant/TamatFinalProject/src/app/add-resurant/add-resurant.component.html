@@ -1,0 +1,84 @@
+<button class="buttonheadr buttonh" (click)="addResurant()">Add Restaurant</button>
+<table *ngIf="AddResurantFormHide==null" class="table table-hover">
+    <tr>
+        <th>Category</th>
+        <th>Resturant</th>
+        <th>Location</th>
+        <th>Delete</th>
+        <th></th>
+        <th>Edit</th>
+    </tr>
+    <tr  *ngFor="let item of arrAllResturants let NumOfindex=index">
+        <td>{{item.Name}}</td>
+        <td>{{item.Location}}</td>
+        <td>{{item.Category}}</td>
+        <td><span class="glyphicon glyphicon-remove DeleteIcon" title="Delete {{item.Name}}" (click)="DeleteRestaurant(item.ID)"></span></td>
+        <td></td>
+        <td><span class="glyphicon glyphicon-edit EditIcon" title="Edit {{item.Name}}" (click)="editForm(item)"></span></td>
+    </tr>
+</table>
+
+
+<!--Edit-->
+<div class="container" *ngIf="change" >
+  <form #trvFormEdit="ngForm" (ngSubmit)="onSubmit(trvFormEdit)">
+    <div class="form-group">
+      <label for="Idname">Name</label>
+      <input id="Idname" type="text" class="form-control" required [(ngModel)]="resurantToEdit.Name" name="name">
+    </div>
+    <div class="form-group">
+      <label for="resurantArea">Area</label>
+      <input id="resurantArea" type="text" class="form-control" required [(ngModel)]="resurantToEdit.Area" name="Area">
+    </div>
+    <div class="form-group">
+      <label for="resurantCategory">Category</label>
+      <input id="resurantCategory" type="text" class="form-control" required [(ngModel)]="resurantToEdit.Category" name="Category">
+    </div>
+    <div class="form-group">
+      <label for="resurantRating">Rating</label>
+      <input id="resurantRating" type="text" class="form-control" required [(ngModel)]="resurantToEdit.Rating" name="Rating">
+    </div>
+    <div class="form-group">
+      <label for="resurantNumberOfRatings">NumberOfRatings</label>
+      <input id="resurantNumberOfRatings" type="text" class="form-control" required [(ngModel)]="resurantToEdit.NumberOfRatings" name="NumberOfRatings">
+    </div>
+    <div class="form-group">
+      <label for="resurantReservationUrl">ReservationUrl</label>
+      <input id="resurantReservationUrl" type="text" class="form-control" required [(ngModel)]="resurantToEdit.ReservationUrl" name="ReservationUrl">
+    </div>
+      <button class="btn btn-primary">Save Resurant</button>  
+      </form>
+</div>
+<!--create-->
+
+<div *ngIf="AddResurantFormHide" class="container">
+  <form #trvForm="ngForm" (ngSubmit)="addMovieSubmitHandler(trvForm)">
+    <div class="form-group">
+      <label for="Idname">Name</label>
+      <input id="Idname" type="text" class="form-control" required [(ngModel)]="Name" name="name" #trvName=ngModel > 
+    </div>
+    <div class="form-group">
+      <label for="IdCategory">Area</label>
+      <input id="IdCategory" type="text" class="form-control" required [(ngModel)]="Area" name="area">
+    </div>
+    <div class="form-group">
+      <label for="IdCategory">Category</label>
+      <input id="IdCategory" type="text" class="form-control" required [(ngModel)]="Category" name="category">
+    </div>
+    <div class="form-group">
+      <label for="IdCategory">Rating</label>
+      <input id="IdCategory" type="text" class="form-control" required [(ngModel)]="Rating" name="rating">
+    </div>
+    <div class="form-group">
+      <label for="IdCategory">Number Of Ratings</label>
+      <input id="IdCategory" type="text" class="form-control" required [(ngModel)]="NumberOfRatings" name="numberOfRatings">
+    </div>
+    <div class="form-group">
+      <label for="IdCategory">Reservation Url</label>
+      <input id="IdCategory" type="text" class="form-control" required [(ngModel)]="ReservationUrl" name="reservationUrl">
+    </div>
+     
+    <button [disabled]="!trvForm.valid"  class="btn btn-primary">Add Restaurant</button>
+  </form>
+</div>
+

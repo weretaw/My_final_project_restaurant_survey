@@ -1,0 +1,22 @@
+
+<table [hidden]="!changeScrrenCategory" class="table table-hover ">
+    <tr>
+        <th>Resturant</th>
+        <th [hidden]="booleanLocation">Area</th>
+        <th [hidden]="!booleanLocation">Category</th>
+        <th>Rating</th>
+        <th>Reservation</th>
+    </tr>
+    <i *ngIf="arrAreaAndCategorys==null" class="fa fa-spinner fa-spin" style='font-size: 48px; color: aquamarine;'></i>
+    <tr *ngFor="let item of arrAreaAndCategorys">
+        <td>{{item.Name}}</td>
+        <td [hidden]="booleanLocation">{{item.Area}}</td>
+        <td [hidden]="!booleanLocation">{{item.Category}}</td>
+        <td>          
+        <rating [(ngModel)]="item.Rating" name="rating" ng-readonly="item.Rating"></rating>
+        <span class="badge spanBg" title="Number of people rated  ({{item.Name}})">{{item.NumberOfRatings}}</span></td>
+        <td><a [href]="item.ReservationUrl"><td title="Click to order from {{item.Name}}" class="glyphicon glyphicon-calendar"></td></a>
+    </tr>
+</table>
+
+

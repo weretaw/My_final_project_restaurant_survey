@@ -1,0 +1,60 @@
+<video *ngIf="videoChange" poster="" autoplay="" muted="" loop="">
+        <source src="https://coverr.co/s3/mp4/Out-Camping.mp4" type="video/mp4">
+    </video>
+
+<div class="navbar-default">
+    <div class="sideBar">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 col-lg-2">
+                    <nav class="navbar navbar-default navbar-fixed-side">
+                        <ul *ngIf="auth.isAuthenticated()" class="nav nav-tabs nav-stacked boxs">
+                            <h3>Categories</h3>
+                            <li><a class="ItalianHover" title="Italian food" (click)="getResturantByCategory('Italian')">Italian</a></li>
+                            <li><a class="FrenchHver" title="French food" (click)="getResturantByCategory('French')">French</a></li>
+                            <li><a class="MiddelHover" title="Middle East food" (click)="getResturantByCategory('Meddle east')">Middle East</a></li>
+                            <li><a class="AsianHover" title="Asian food" (click)="getResturantByCategory('Asian')">Asian</a></li>
+                            <li><a class="CoffeeHover" title="Coffee Houses food" (click)="getResturantByCategory('Coffee Houses')">Coffee Houses</a></li>
+                            <li><a class="fishAndSea" title="Fish & Sea Food food" (click)="getResturantByCategory('Fish and sea foods')">Fish & Sea Food</a></li>
+                            <li><a class="VeganHover" title="Vegan food" (click)="getResturantByCategory('Vegan')">Vegan</a></li>
+                        </ul>
+                        <ul *ngIf="auth.isAuthenticated()" class="nav nav-tabs nav-stacked boxs">
+                            <h3>Area</h3>
+                            <li><a (click)="getResturantByArea('North')">North</a></li>
+                            <li><a (click)="getResturantByArea('Hasharon')">Hasharon</a></li>
+                            <li><a (click)="getResturantByArea('Hamerkaz')">Hamerkaz</a></li>
+                            <li><a (click)="getResturantByArea('Hashfela')">Hashfela</a></li>
+                            <li><a (click)="getResturantByArea('Jerusalem')">Jerusalem</a></li>
+                            <li><a (click)="getResturantByArea('South')">South</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-sm-9 col-lg-10">
+                    <Resturants [arrAreaAndCategorys]="arrAreaAndCategorys"
+                     [changeScrrenCategory]="changeScrrenCategory"
+                     [booleanLocation]="booleanLocation"></Resturants>
+
+                </div>
+                <!-- <div [hidden]="changeScrrenCategory" class="decor">Resturants Review</div> -->
+                 <div class="container">                   
+                    <div class="page-wrap">
+                        <div [hidden]="changeScrrenCategory" class="row">
+                            <svg viewBox="0 0 960 300">
+                                <symbol id="s-text">
+                                    <text text-anchor="middle" x="50%" y="80%">Restaurant </text>
+                                </symbol>
+                                <g class="g-ants">
+                                    <use xlink:href="#s-text" class="text-copy"></use>
+                                    <use xlink:href="#s-text" class="text-copy"></use>
+                                    <use xlink:href="#s-text" class="text-copy"></use>
+                                    <use xlink:href="#s-text" class="text-copy"></use>
+                                    <use xlink:href="#s-text" class="text-copy"></use>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

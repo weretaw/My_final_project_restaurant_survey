@@ -1,0 +1,22 @@
+table{
+    background-color: rgba(0, 0, 0, 0.6);
+    color: lavenderblush;
+}
+tr:hover{
+color: black;
+}
+.DeleteIcon:hover{
+color: red
+}
+.EditIcon:hover{
+color: blue;
+}
+.buttonheadr{
+background-color: black;
+color: floralwhite;
+border-radius: 8px;
+border: none;
+}
+.buttonh:hover{
+background-color: #743409;
+}

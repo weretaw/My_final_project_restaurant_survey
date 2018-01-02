@@ -1,0 +1,56 @@
+.newbody{
+     background-image:url("C:/Users/user/Desktop/Woretaw&Avraham_TAMT_PROJECT/resturant/TamatFinalProject/src/app/veg_pics/group-2606784_960_720.jpg"); 
+     background-size: cover;
+     height: 355vh;
+     width: 100%;
+     background-position: 30% 20%;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     margin-top: -10px; 
+     color:chocolate;
+     font-family: serif;
+     font-size: 20px;
+}
+
+.navbar-default{
+  font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+  background:transparent;
+  background-image:none;
+  border-color:transparent;
+  box-shadow:none;
+  color:black;
+  font-weight: bold;
+  font-size: 20px;
+  
+}
+
+.navbar{
+  background:transparent;
+  border-color:transparent;
+  color: gold;
+  font-weight: bold;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color:sandybrown;
+    font-family: serif;
+    font-weight: bold;
+    font-size: 17px;
+}
+.spanIcon{
+color: red;
+}
+
+
+/* a{
+  background-color: rgba(0, 0, 0, 0.7);
+} */
+.navbar1{
+  background-color: rgba(12, 13, 14, 0.7);
+}
+a:hover{
+  color: black;
+}
+.imglink{
+width: 73px;
+height: 63px;
+}

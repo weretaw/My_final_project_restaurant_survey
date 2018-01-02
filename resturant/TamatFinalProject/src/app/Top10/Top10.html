@@ -1,0 +1,19 @@
+<h1>The best Top 10 Restaurants</h1>
+<table class="table table-hover">
+    <tr>
+        <th>Resturant Name</th>
+        <th>Category</th>
+        <th>Ratings</th>
+        <th>Reservation</th>
+
+    </tr>
+    <i *ngIf="arTop10==null" class="fa fa-spinner fa-spin" style='font-size: 48px; color: aquamarine;'></i>
+    <tr *ngFor="let item of arTop10 | slice:0:10 ">
+        <td>{{item.Name}}</td>
+        <td>{{item.Category}}</td>
+        <td>          
+        <rating [(ngModel)]="item.Rating" name="rating" ng-readonly="item.Rating"></rating>
+           <span class="badge spanBg" title="Number of people rated  ({{item.Name}})">{{item.NumberOfRatings}}</span> </td>
+            <td><a [href]="item.ReservationUrl"><td title="Click to order from {{item.Name}}" class="glyphicon glyphicon-calendar"></td></a>
+    </tr>
+</table>
